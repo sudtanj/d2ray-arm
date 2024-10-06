@@ -33,4 +33,4 @@ jobs:
           file: Dockerfile
           platforms: linux/arm64
           push: true
-          tags: sudtanj/shadowsocks-rust-arm:latest
+          tags: sudtanj/d2ray-arm
