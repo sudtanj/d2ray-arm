@@ -1,6 +1,6 @@
-FROM alpine:latest
+FROM --platform=linux/arm64/v8 alpine:latest
 
-ENV VER_XRAY 1.8.24
+ENV VER_XRAY 24.9.30
 
 # install packages
 RUN set -xe && apk add --no-cache unzip wget openssl python3 py3-jinja2 supervisor apache2-utils bash libqrencode libqrencode-tools
@@ -8,8 +8,8 @@ RUN set -xe && apk add --no-cache unzip wget openssl python3 py3-jinja2 supervis
 # download packages
 RUN set -xe && \
     mkdir -p /downloads && \
-    wget -P /downloads https://github.com/XTLS/Xray-core/releases/download/v$VER_XRAY/Xray-linux-64.zip && \
-    unzip /downloads/Xray-linux-64.zip -d /opt/xray && \
+    wget -P /downloads https://github.com/XTLS/Xray-core/releases/download/v$VER_XRAY/Xray-linux-arm64-v8a.zip && \
+    unzip /downloads/Xray-linux-arm64-v8a.zip -d /opt/xray && \
     rm -rf /downloads
 
 COPY ./opt /opt/
