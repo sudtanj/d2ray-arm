@@ -4,7 +4,7 @@ networks:
 
 services:
   d2ray:
-    image: quackerd/d2ray
+    image: sudtanj/d2ray:latest
     container_name: d2ray
     ports:
       - 8443:8443
