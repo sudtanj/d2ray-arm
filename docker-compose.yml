@@ -22,3 +22,5 @@ services:
       - d2ray_br
     volumes:
       - ./config:/etc/d2ray
+      - "/etc/timezone:/etc/timezone:ro"
+      - "/etc/localtime:/etc/localtime:ro"
